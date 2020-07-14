@@ -67,12 +67,12 @@ public function edit(Request $request)
       $profile->fill($profile_form)->save();
 
         // 以下を追記
-        $profilehistory = new Profilehistory;
-        $profilehistory->profile_id = $profile->id;
-        $profilehistory->edited_at = Carbon::now();
-        $profilehistory->save();
+        $history = new Profilehistory;
+        $history->profile_id = $profile->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
 
-      return redirect('admin/profile');
+      return redirect('admin/profile/');
     }
 
     public function delete(Request $request)
