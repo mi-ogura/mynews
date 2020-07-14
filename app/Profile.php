@@ -16,7 +16,7 @@ class Profile extends Model
     );
     public function histories()
     {
-      return $this->hasMany('App\Profile_History');
+      return $this->hasMany('App\Profilehistory');
 
     }
 }
